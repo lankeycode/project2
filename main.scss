@@ -1,0 +1,14 @@
+$font-stack:'Lato', sans-serif;
+$font-primary-color:rgb(41, 40, 40);
+$font-secondary-color:rgb(175, 166, 166);
+$primary-color:rgb(216, 205, 205);
+$secondary-color:#fff;
+$current-color:rgb(199, 34, 48);
+
+body {
+    height: 100vh;
+    background:linear-gradient(0deg, rgba(154,128,112,1) 0%, rgba(153,88,42,1) 100%);
+    color:$current-color;
+    
+
+}

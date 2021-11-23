@@ -1,1 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body{
+    height: 100vh;
+    background:linear-gradient(0deg, rgba(154,128,112,1) 0%, rgba(153,88,42,1) 100%);
+}
+
+#newGame,
+#rollDice,
+#hold{
+    position: absolute;
+    width: 20vw;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-55%);
+    font-size: 15px;
+    font-family:'Lato', sans-serif;
+    color:rgb(41, 40, 40);
+    text-align: center;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#newGame{
+    top:10vh;
+}
+#rollDice{
+    top:65vh; 
+}
+#hold{
+    top: 75vh;
+}
+svg{
+    margin-right: 0.5vw;
+}
+
+#dice{
+    position: absolute;
+    height: 100px;
+    width: 100px;;
+    background: cyan;
+    top: 35vh;
+    left: 45%;
+    
+    z-index: 20;
+}
+
+#left{
+    position: absolute;
+    left:2vw ;
+    height: 90vh;
+    width: 50%;
+    background: rgb(216, 205, 205);
+    text-align: center;
+}
+
+
+
+#right{
+    position: absolute;
+    right:2vw;
+    height:90vh ;
+    width: 50%;
+    background: #fff;
+    text-align: center;
+}
+
+.player{
+    position: relative;
+    top:25vh;
+    font-size: 2.1rem;
+}
+
+.round{
+    position: relative;
+    top:60vh;
+    height: 10vh;
+    width: 8vw;
+    background: #c72230;
+    left: 50%;
+    transform: translateX(-50%);
+}
