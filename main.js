@@ -24,15 +24,35 @@ function getRandomDice(min, max) {
 
 rollDice.addEventListener('click', () => {
     var result = getRandomDice(1, 6);
-    dice.textContent = result;
-    round += result;
-    round1.textContent = round;
+    console.log(result);
 
 
+    if (result === 1) {
+        dice.textContent = result;
+        round = 0;
+        round1.textContent = round;
+        changePlaye()
 
+    } else {
+        dice.textContent = result;
+        round += result;
+        round1.textContent = round;
+
+    }
 
 
 
 
 })
 
+hold.addEventListener('click', () => {
+
+
+})
+
+
+newGame.addEventListener('click', () => {
+
+
+
+})
