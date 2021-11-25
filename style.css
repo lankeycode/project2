@@ -18,7 +18,7 @@ body{
     position: absolute;
     width: 20vw;
     height: 50px;
-    left: 50%;
+    left: 48.5%;
     transform: translateX(-55%);
     font-size: 15px;
     font-family:'Lato', sans-serif;
@@ -40,12 +40,14 @@ body{
 svg{
     margin-right: 0.5vw;
 }
-
+#diceImg{
+    height: 100px;
+    width: 100px;
+}
 #dice{
     position: absolute;
     height: 100px;
-    width: 100px;;
-    background: cyan;
+    width: 100px;
     top: 40vh;
     left: 45%;
     
@@ -92,9 +94,16 @@ svg{
     background: rgb(216, 205, 205);
 
 }
+#left .active{
+    background: #fff;
+}
 #right{
     right:2vw;
     background: #fff;
+    
+}
+#right .active{
+    background: rgb(216, 205, 205);
     
 }
 
