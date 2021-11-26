@@ -76,7 +76,7 @@ rollDice.addEventListener('click', () => {
 
     } else {
 
-        FinishGame();
+        gameOver();
     }
 })
 
@@ -87,12 +87,12 @@ hold.addEventListener('click', () => {
     if (playerActive === 'pl1') {
         score1 += round;
         global1.textContent = score1;
-        FinishGame();
+        gameOver();
 
     } else {
         score2 += round;
         global2.textContent = score2;
-        FinishGame();
+        gameOver();
     }
 })
 
@@ -122,7 +122,7 @@ newGame.addEventListener('click', () => {
 
 //  If playerActive has 100 points, playerActive win
 // end of game
-function FinishGame() {
+function gameOver() {
     if ((playerActive === 'pl1') && (score1 >= 100)) {
 
         global1.textContent = 'WIN'
