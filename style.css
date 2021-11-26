@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 *{
     margin: 0;
@@ -50,7 +50,6 @@ svg{
     width: 100px;
     top: 40vh;
     left: 45%;
-    
     z-index: 20;
 }
 .global{
@@ -60,7 +59,6 @@ svg{
     height: 100px;
     width: 100px;
     text-align: center;
-    /* background: darkkhaki; */
 }
 .scoreG{
     position: relative;
@@ -78,7 +76,6 @@ svg{
     font-weight: 400;
 }
 
-
 #left,
 #right{
     position: absolute;
@@ -86,32 +83,46 @@ svg{
     height: 90vh;
     width: 50%;
     text-align: center;
+    background: #fff;
 }
-
 
 #left{
-    left:2vw ;
-    background: rgb(216, 205, 205);
+    left:2vw ;    
+}
 
-}
-#left .active{
-    background: #fff;
-}
 #right{
-    right:2vw;
-    background: #fff;
-    
+    right:2vw;      
 }
-#right .active{
-    background: rgb(216, 205, 205);
-    
+
+#right.active,
+#left.active{
+    background: rgb(216, 205, 205);   
 }
 
 .player{
     position: relative;
     top:25vh;
-    font-size: 2.1rem;
-    font-weight: 100;
+    font-size: 1.9rem;
+    font-weight:100;
+    color: rgba(128, 128, 128, 0.445) ;
+}
+
+.player.active{
+    color: rgb(39, 38, 38);
+
+}
+.player1Select,
+.player2Select{
+    position: relative;
+    top:22vh;
+    left:63%;
+    background-color: #c72230;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    z-index: 50;
+    visibility: hidden;
+
 }
 
 .round{
@@ -123,3 +134,4 @@ svg{
     left: 50%;
     transform: translateX(-50%);
 }
+
