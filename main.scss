@@ -1,14 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+$main-background:linear-gradient(0deg, rgba(154,128,112,1) 0%, rgba(153,88,42,1) 100%);
 $font-stack:'Lato', sans-serif;
 $font-primary-color:rgb(41, 40, 40);
-$font-secondary-color:rgb(175, 166, 166);
+$font-secondary-color:rgba(128, 128, 128, 0.445);
+$font-color-global:#c722308a;
+$font-color-round:rgb(194, 157, 157);
 $primary-color:rgb(216, 205, 205);
 $secondary-color:#fff;
 $current-color:rgb(199, 34, 48);
 
 body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
     height: 100vh;
-    background:linear-gradient(0deg, rgba(154,128,112,1) 0%, rgba(153,88,42,1) 100%);
-    color:$current-color;
-    
+    background:$main-background;
+    font-family: $font-stack;  
 
 }
+
+#newGame,
+#rollDice,
+#hold{
+    position: absolute;
+    width: 20vw;
+    height: 50px;
+    left: 48.5%;
+    transform: translateX(-55%);
+    font-size: 15px;
+    // font-family:'Lato', sans-serif;
+    color:$font-primary-color;
+    text-align: center;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#newGame{
+    top:10vh;
+}
+#rollDice{
+    top:65vh; 
+}
+#hold{
+    top: 75vh;
+}
+svg{
+    margin-right: 0.5vw;
+}
+#dice{ 
+    position: absolute; 
+    height: 100px;
+    width: 100px;
+    top: 40vh;
+    left: 45%;
+    z-index: 20;
+}
+#diceImg{
+    height: 100px;
+    width: 100px;
+}
+
+#left,
+#right{
+    position: absolute;
+    top: 5vh;
+    height: 90vh;
+    width: 50%;
+    text-align: center;
+    background: $secondary-color;
+}
+
+#left{
+    left:2vw ;    
+}
+
+#right{
+    right:2vw;      
+}
+
+#right.active,
+#left.active{
+    background: $primary-color;   
+}
+
+.player{
+    position: relative;
+    top:25vh;
+    font-size: 1.9rem;
+    font-weight:100;
+    color: $font-secondary-color;
+
+&.active{
+    color:$font-primary-color;
+}
+}
+
+.player1Select,
+.player2Select{
+    position: relative;
+    top:22vh;
+    left:63%;
+    background-color: $current-color;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    z-index: 50;
+    visibility: hidden;
+}
+
+.global{
+    position: absolute;
+    left:43%;
+    top:35vh;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.scoreG{
+        position: relative;
+        top:30%;
+        font-size: 3rem;
+        font-weight: 100;
+        color: $font-color-global;
+    }
+
+
+.round{
+    position: relative;
+    top:60vh;
+    height: 10vh;
+    width: 8vw;
+    background: $current-color;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scoreR{
+        position: absolute;
+        top:35%;
+        left: 40%;
+        color: $font-color-round;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
