@@ -161,14 +161,14 @@ svg {
   }
 }
 
-@media screen and (min-width: 900px) and (max-height: 800px) {
+@media screen and (min-width: 1024px) and (max-height: 900px) {
   .round {
     height: 12vh;
     width: 13vw;
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 767.9px) and (min-height: 767.9px) {
+@media screen and (min-width: 321px) and (max-width: 767.9px) {
   .player1Select,
   .player2Select {
     left: 50%;
@@ -205,10 +205,11 @@ svg {
   }
 }
 
-@media screen and (min-height: 321px) and (max-height: 767.9px) and (min-width: 600px) and (max-width: 1023px) {
+@media screen and (min-height: 321px) and (max-height: 485px) {
   .player1Select,
   .player2Select {
     top: 10vh;
+    left: 75%;
   }
   .player {
     top: 15vh;
@@ -217,17 +218,24 @@ svg {
     top: 25%;
   }
   .round {
-    width: 10vw;
+    width: 13vw;
     height: 15%;
     top: 60%;
   }
   #dice {
+    top: 35vh;
     width: 60px;
     height: 60px;
   }
   #diceImg {
     width: 60px;
     height: 60px;
+  }
+  #rollDice {
+    top: 62vh;
+  }
+  #hold {
+    top: 70vh;
   }
 }
 
@@ -268,6 +276,53 @@ svg {
   #diceImg {
     height: 50px;
     width: 50px;
+  }
+}
+
+@media screen and (max-height: 320px) {
+  .player {
+    top: 20vh;
+    font-size: 1.5rem;
+  }
+  .player1Select,
+  .player2Select {
+    left: 67%;
+    top: 13vh;
+  }
+  .global {
+    top: 25vh;
+    left: 25%;
+  }
+  .scoreG {
+    top: 40%;
+    font-size: 1.7rem;
+  }
+  .round {
+    height: 15vh;
+    width: 13vw;
+    top: 57vh;
+  }
+  .round p {
+    font-size: 0.9rem;
+  }
+  #newGame,
+  #rollDice,
+  #hold {
+    width: 40vw;
+  }
+  #dice {
+    width: 50px;
+    height: 50px;
+  }
+  #diceImg {
+    height: 50px;
+    width: 50px;
+  }
+  #rollDice {
+    top: 63vh;
+  }
+  #hold {
+    top: 75vh;
   }
 }
 /*# sourceMappingURL=main.css.map */
