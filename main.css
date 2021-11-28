@@ -26,6 +26,12 @@ body {
   cursor: pointer;
 }
 
+#newGame p:hover,
+#rollDice p:hover,
+#hold p:hover {
+  font-weight: bold;
+}
+
 #newGame {
   top: 10vh;
 }
@@ -47,7 +53,9 @@ svg {
   height: 100px;
   width: 100px;
   top: 40vh;
-  left: 45%;
+  left: 48%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 20;
 }
 
@@ -139,5 +147,127 @@ svg {
   color: #c29d9d;
   font-size: 1.3rem;
   font-weight: 400;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .player1Select,
+  .player2Select {
+    left: 70%;
+    top: 23vh;
+  }
+  .round {
+    height: 8vh;
+    width: 15vw;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-height: 800px) {
+  .round {
+    height: 12vh;
+    width: 13vw;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767.9px) and (min-height: 767.9px) {
+  .player1Select,
+  .player2Select {
+    left: 50%;
+    top: 25vh;
+  }
+  .global {
+    left: 25%;
+  }
+  .scoreG {
+    top: 60%;
+  }
+  .round {
+    height: 10vh;
+    width: 15vh;
+  }
+  #newGame,
+  #rollDice,
+  #hold {
+    width: 40vw;
+  }
+  #rollDice {
+    top: 52vh;
+  }
+  #hold {
+    top: 60vh;
+  }
+  #dice {
+    width: 70px;
+    height: 70px;
+  }
+  #diceImg {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media screen and (min-height: 321px) and (max-height: 767.9px) and (min-width: 600px) and (max-width: 1023px) {
+  .player1Select,
+  .player2Select {
+    top: 10vh;
+  }
+  .player {
+    top: 15vh;
+  }
+  .global {
+    top: 25%;
+  }
+  .round {
+    width: 10vw;
+    height: 15%;
+    top: 60%;
+  }
+  #dice {
+    width: 60px;
+    height: 60px;
+  }
+  #diceImg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .player {
+    top: 20vh;
+    font-size: 1.5rem;
+  }
+  .player1Select,
+  .player2Select {
+    left: 50%;
+    top: 21vh;
+  }
+  .global {
+    left: 25%;
+  }
+  .scoreG {
+    top: 60%;
+    font-size: 1.7rem;
+  }
+  .round {
+    height: 10vh;
+    width: 25vw;
+    top: 67vh;
+  }
+  .round p {
+    font-size: 0.9rem;
+  }
+  #newGame,
+  #rollDice,
+  #hold {
+    width: 40vw;
+  }
+  #dice {
+    width: 50px;
+    height: 50px;
+  }
+  #diceImg {
+    height: 50px;
+    width: 50px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

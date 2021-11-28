@@ -35,6 +35,13 @@ body {
     text-align: center;
     z-index: 10;
     cursor: pointer;
+
+    & p:hover{
+        font-weight: bold;
+        
+
+
+    }
 }
 
 #newGame{
@@ -54,7 +61,8 @@ svg{
     height: 100px;
     width: 100px;
     top: 40vh;
-    left: 45%;
+    left:48%;
+    transform: translateX(-50%);
     z-index: 20;
 }
 #diceImg{
@@ -146,3 +154,150 @@ svg{
         font-size: 1.3rem;
         font-weight: 400;
     }
+
+    // ******* RESPONSIVE ********
+
+    $min-tablet:768px;
+    $max-tablet:1024px;
+    $min-tablet-landscape:900px;
+    $max-tablet-landscape:800px;
+    $min-smartphone:321px;
+    $max-smartphone:767.9px;
+    $max-smartphone-landscape:1023px;
+    $mobile:320px;
+  
+// tablet 
+    @media screen and (min-width:$min-tablet) and (max-width:$max-tablet) {
+        .player1Select,
+        .player2Select{
+            left:70%;
+            top:23vh;
+        }
+        .round{
+            height: 8vh;
+            width: 15vw;
+        }   
+    }
+
+// tablet landscape
+    @media screen and (min-width:$min-tablet-landscape) and (max-height:$max-tablet-landscape) {
+        .round{
+            height:12vh;
+            width: 13vw;
+            
+        } 
+    }
+
+// smartphone
+    @media screen and (min-width:$min-smartphone) and (max-width:$max-smartphone) and (min-height:$max-smartphone){
+        .player1Select,
+        .player2Select{
+            left:50%;
+            top:25vh;
+        }
+        .global{
+            left: 25%;
+        }
+        .scoreG{
+            top: 60%;
+            
+        }
+        .round{
+           
+            height: 10vh;
+            width: 15vh;
+            
+        }
+        #newGame,
+        #rollDice,
+        #hold{
+            width: 40vw;
+        }
+        #rollDice{
+            top: 52vh;
+        }
+        #hold{
+            top: 60vh;
+        }
+        #dice{
+            width: 70px;
+            height: 70px;
+        }
+        #diceImg{
+            height: 70px;
+            width: 70px;
+    }
+}
+
+// smartphone landscape
+    @media screen and (min-height:$min-smartphone)and(max-height:$max-smartphone) and (min-width:600px) and (max-width:$max-smartphone-landscape) {
+        .player1Select,
+        .player2Select{
+            top: 10vh;
+        }
+        .player{
+            top: 15vh;
+        }
+        .global{
+            top: 25%;
+        }
+        .round{
+            width: 10vw;
+            height: 15%;
+            top:60%
+        }
+
+        #dice{
+            width: 60px;
+            height: 60px;
+        }
+        #diceImg{
+            width: 60px;
+            height: 60px;
+
+        }
+    
+}
+// mobile
+    @media screen and (max-width:$mobile) {
+        .player{
+            top:20vh;
+            font-size: 1.5rem;
+        }
+        .player1Select,
+        .player2Select{
+            left:50%;
+            top:21vh;
+        }
+        .global{
+            left: 25%;
+        }
+        .scoreG{
+            top: 60%;
+            font-size: 1.7rem;
+            
+        }
+        .round{
+            height: 10vh;
+            width: 25vw;
+            top:67vh;
+        }
+        .round p{
+            font-size: 0.9rem
+        }
+        #newGame,
+        #rollDice,
+        #hold{
+            width: 40vw;
+        }
+        #dice{
+            width: 50px;
+            height: 50px;
+        }
+        #diceImg{
+            height: 50px;
+            width: 50px;
+    }
+    
+    }
+
