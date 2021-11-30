@@ -9,6 +9,16 @@ $font-color-round:rgb(194, 157, 157);
 $primary-color:rgb(216, 205, 205);
 $secondary-color:#fff;
 $current-color:rgb(199, 34, 48);
+$min-tablet:768px;
+$max-tablet:1024px;
+$max-tablet-landscape:900px;
+$min-smartphone:321px;
+$max-smartphone:767.9px;
+$max-smartphone-landscape:485px;
+$mobile:320px;
+$dice-mobile:50px;
+$dice-smartphone:70px;
+$dice-smartphone-landscape:60px;
 
 body {
     margin: 0;
@@ -63,9 +73,29 @@ svg{
     transform: translateX(-50%);
     z-index: 20;
 }
-#diceImg{
+#diceImg,
+#animeDice{
     height: 100px;
     width: 100px;
+    
+}
+#diceImg{
+    position: absolute;
+    z-index: 15;
+    
+}
+#animeDice{
+    position: absolute;
+    z-index:10;
+    visibility: hidden;
+    
+}
+#diceImg.anime{
+    visibility: hidden;
+}
+#animeDice.anime{
+    animation:rotate-dice .6s linear 3 both;
+    visibility: visible;
 }
 
 #left,
@@ -153,16 +183,25 @@ svg{
         font-weight: 400;
     }
 
-    // ******* RESPONSIVE ********
+// ****** ANIMATION *********
+@keyframes rotate-dice{
+    0%{
+        transform:rotate(-360deg);opacity:1;
+        display:block;  
+    }
+    
+    100%{
+        transform:rotate(0);opacity:1;
+        display:none;   
+    }
+  }
 
-    $min-tablet:768px;
-    $max-tablet:1024px;
-    $max-tablet-landscape:900px;
-    $min-smartphone:321px;
-    $max-smartphone:767.9px;
-    $max-smartphone-landscape:485px;
-    $mobile:320px;
-  
+
+
+// ******* RESPONSIVE ********
+
+    
+
 // tablet 
     @media screen and (min-width:$min-tablet) and (max-width:$max-tablet) {
         .player1Select,
@@ -217,13 +256,17 @@ svg{
             top: 60vh;
         }
         #dice{
-            width: 70px;
-            height: 70px;
+            width: $dice-smartphone;
+            height: $dice-smartphone;
         }
         #diceImg{
-            height: 70px;
-            width: 70px;
-    }
+            height: $dice-smartphone;
+            width: $dice-smartphone;
+        }
+        #animeDice{
+            height: $dice-smartphone;
+            width: $dice-smartphone;
+        }
 }
 
 // smartphone landscape
@@ -248,13 +291,17 @@ svg{
 
         #dice{
             top: 35vh;
-            width: 60px;
-            height: 60px;
+            width: $dice-smartphone-landscape;
+            height: $dice-smartphone-landscape;
         }
         #diceImg{
-            width: 60px;
-            height: 60px;
+            width: $dice-smartphone-landscape;
+            height: $dice-smartphone-landscape;
 
+        }
+        #animeDice{
+            width: $dice-smartphone-landscape;
+            height: $dice-smartphone-landscape;
         }
         #rollDice{
             top: 62vh;
@@ -303,7 +350,11 @@ svg{
         #diceImg{
             height: 50px;
             width: 50px;
-    }
+        }
+        #animeDice{
+            height: 50px;
+            width: 50px;
+        }
     
     }
 // mobile landscape
@@ -341,12 +392,16 @@ svg{
         width: 40vw;
     }
     #dice{
-        width: 50px;
-        height: 50px;
+        width: $dice-mobile;
+        height: $dice-mobile;
     }
     #diceImg{
-        height: 50px;
-        width: 50px;
+        height: $dice-mobile;
+        width: $dice-mobile;
+}
+#animeDice{
+    height: $dice-mobile;
+    width: $dice-mobile;
 }
 #rollDice{
     top: 63vh;

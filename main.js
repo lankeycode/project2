@@ -6,7 +6,8 @@ const player1Select = document.querySelector('.player1Select');
 const player2Select = document.querySelector('.player2Select');
 
 var dice = document.getElementById('dice');
-var diceImg = document.getElementById('.diceImg ');
+var diceImg = document.getElementById('diceImg');
+var animDice = document.getElementById('animeDice');
 var newGame = document.getElementById('newGame');
 var rollDice = document.getElementById('rollDice');
 var hold = document.getElementById('hold');
@@ -21,6 +22,7 @@ var global = 0;
 var score1 = 0;
 var score2 = 0;
 
+// initialize the game
 startNewGame();
 
 function getRandomDice(min, max) {
@@ -29,6 +31,7 @@ function getRandomDice(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// switch player
 function changePlayer() {
     playerActive === 'pl1' ? playerActive = 'pl2' : playerActive = 'pl1';
     round = 0;
@@ -55,29 +58,50 @@ function indicatePlayer() {
         player1.classList.remove('active');
     }
 }
+// dice animation
+function displayDice() {
+    animDice.classList.toggle('anime');
+    diceImg.classList.toggle('anime');
+
+
+};
 
 // PlayerActive roll the dice
 // If playerActive get number one, then 'round' = 0 
 // else playerActive add 'result' to 'round'
 rollDice.addEventListener('click', () => {
-    var result = getRandomDice(1, 6);
-    document.getElementById('diceImg').src = "./img/dice" + result + ".svg";
-    dice.style.display = 'block';
 
-    if ((result !== 1) && (playerActive === 'pl1')) {
-        round += result;
-        round1.textContent = round;
-        indicatePlayer();
+    (displayDice());
 
-    } else if ((result !== 1) && (playerActive === 'pl2')) {
-        round += result;
-        round2.textContent = round;
-        indicatePlayer();
+    setTimeout(function () {
+        var result = getRandomDice(1, 6);
+        document.getElementById('diceImg').src = "./img/dice" + result + ".svg";
+        dice.style.display = 'block';
 
-    } else {
 
-        gameOver();
-    }
+        if ((result !== 1) && (playerActive === 'pl1')) {
+            round += result;
+            round1.textContent = round;
+            animDice.classList.toggle('anime');
+            diceImg.classList.toggle('anime');
+            indicatePlayer();
+
+        } else if ((result !== 1) && (playerActive === 'pl2')) {
+            round += result;
+            round2.textContent = round;
+            animDice.classList.toggle('anime');
+            diceImg.classList.toggle('anime');
+            indicatePlayer();
+
+        } else {
+            animDice.classList.toggle('anime')
+            diceImg.classList.toggle('anime');
+
+            gameOver();
+        }
+
+    }, 1500);
+
 })
 
 // recover 'round' of the active player and display global score
@@ -96,8 +120,9 @@ hold.addEventListener('click', () => {
     }
 })
 
+//  initialize the game
+// start or reset the game
 //   player choice who start the game
-//  start or reset the game
 function startNewGame() {
 
     var choicePlayer = getRandomDice(1, 2);
@@ -116,8 +141,9 @@ function startNewGame() {
     indicatePlayer();
 
 }
+//click to start or reset the game
 newGame.addEventListener('click', () => {
-    (startNewGame())
+    (startNewGame());
 })
 
 //  If playerActive has 100 points, playerActive win
@@ -125,18 +151,18 @@ newGame.addEventListener('click', () => {
 function gameOver() {
     if ((playerActive === 'pl1') && (score1 >= 100)) {
 
-        global1.textContent = 'WIN'
-        rollDice.style.display = 'none'
-        hold.style.display = 'none'
+        global1.textContent = 'WIN';
+        rollDice.style.display = 'none';
+        hold.style.display = 'none';
 
     } else if ((playerActive === 'pl2') && (score2 >= 100)) {
 
-        global2.textContent = 'WIN'
-        rollDice.style.display = 'none'
-        hold.style.display = 'none'
+        global2.textContent = 'WIN';
+        rollDice.style.display = 'none';
+        hold.style.display = 'none';
 
     } else {
-        (changePlayer())
+        (changePlayer());
     }
 }
 

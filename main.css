@@ -59,9 +59,31 @@ svg {
   z-index: 20;
 }
 
-#diceImg {
+#diceImg,
+#animeDice {
   height: 100px;
   width: 100px;
+}
+
+#diceImg {
+  position: absolute;
+  z-index: 15;
+}
+
+#animeDice {
+  position: absolute;
+  z-index: 10;
+  visibility: hidden;
+}
+
+#diceImg.anime {
+  visibility: hidden;
+}
+
+#animeDice.anime {
+  -webkit-animation: rotate-dice .6s linear 3 both;
+          animation: rotate-dice .6s linear 3 both;
+  visibility: visible;
 }
 
 #left,
@@ -149,6 +171,36 @@ svg {
   font-weight: 400;
 }
 
+@-webkit-keyframes rotate-dice {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+    display: none;
+  }
+}
+
+@keyframes rotate-dice {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+    display: none;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .player1Select,
   .player2Select {
@@ -203,6 +255,10 @@ svg {
     height: 70px;
     width: 70px;
   }
+  #animeDice {
+    height: 70px;
+    width: 70px;
+  }
 }
 
 @media screen and (min-height: 321px) and (max-height: 485px) {
@@ -228,6 +284,10 @@ svg {
     height: 60px;
   }
   #diceImg {
+    width: 60px;
+    height: 60px;
+  }
+  #animeDice {
     width: 60px;
     height: 60px;
   }
@@ -277,6 +337,10 @@ svg {
     height: 50px;
     width: 50px;
   }
+  #animeDice {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 @media screen and (max-height: 320px) {
@@ -315,6 +379,10 @@ svg {
     height: 50px;
   }
   #diceImg {
+    height: 50px;
+    width: 50px;
+  }
+  #animeDice {
     height: 50px;
     width: 50px;
   }
